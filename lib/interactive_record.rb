@@ -52,6 +52,6 @@ class InteractiveRecord
   def self.find_by(value)
     #column = value.keys.first.to_s 
     sql = "SELECT * FROM #{self.table_name} WHERE #{value.keys.first.to_s} = ?"
-    DB[:conn].execute(sql, name)
+    DB[:conn].execute(sql, value.keys.first.to_s)
   end
 end
