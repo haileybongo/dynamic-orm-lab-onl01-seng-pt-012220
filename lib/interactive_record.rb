@@ -49,10 +49,10 @@ class InteractiveRecord
     self.class.column_names.delete_if {|col| col == "id"}.join(", ")
   end
 
-def self.find_by(value)
-  #column = value.keys.first.to_s 
-  sql = "SELECT * FROM #{self.table_name} WHERE #{value.keys.first.to_s
-    binding.pry
-  DB[:conn].execute(sql, name)
-end
+  def self.find_by(value)
+    #column = value.keys.first.to_s 
+    sql = "SELECT * FROM #{self.table_name} WHERE #{value.keys.first.to_s
+      binding.pry
+    DB[:conn].execute(sql, name)
+  end
 end
