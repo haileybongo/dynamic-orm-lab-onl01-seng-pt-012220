@@ -52,6 +52,7 @@ class InteractiveRecord
 def self.find_by(value)
   #column = value.keys.first.to_s 
   sql = "SELECT * FROM #{self.table_name} WHERE #{value.keys.first.to_s} = ?"
+    binding.pry
   DB[:conn].execute(sql, name)
 end
 end
